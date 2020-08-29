@@ -5,7 +5,7 @@ const fruits = [
     name: "Citrons",
     price: 0.99,
     unit: "pièce",
-    image: "citron.png"
+    image: "citron.png",
   },
   {
     ref: "fruits_2",
@@ -13,7 +13,7 @@ const fruits = [
     name: "Citrons Vert",
     price: 1.99,
     unit: "pièce",
-    image: "lime.png"
+    image: "lime.png",
   },
   {
     ref: "fruits_3",
@@ -21,7 +21,7 @@ const fruits = [
     name: "Fraises",
     price: 2.99,
     unit: "kg",
-    image: "fraise.png"
+    image: "fraise.png",
   },
   {
     ref: "fruits_4",
@@ -29,7 +29,7 @@ const fruits = [
     name: "Noix de coco",
     price: 3.99,
     unit: "pièce",
-    image: "coconut.png"
+    image: "coconut.png",
   },
   {
     ref: "fruits_5",
@@ -37,7 +37,7 @@ const fruits = [
     name: "Clémentine",
     price: 3.99,
     unit: "kg",
-    image: "clementine.png"
+    image: "clementine.png",
   },
   {
     ref: "fruits_6",
@@ -45,16 +45,15 @@ const fruits = [
     name: "Figues",
     price: 5.99,
     unit: "kg",
-    image: "figues.png"
+    image: "figues.png",
   },
-  ,
   {
     ref: "fruits_7",
     category: 0,
     name: "Raisins",
     price: 4.59,
     unit: "kg",
-    image: "grapes.png"
+    image: "grapes.png",
   },
   {
     ref: "fruits_8",
@@ -62,7 +61,7 @@ const fruits = [
     name: "Kiwi",
     price: 4.99,
     unit: "kg",
-    image: "kiwi.png"
+    image: "kiwi.png",
   },
   {
     ref: "fruits_9",
@@ -70,10 +69,9 @@ const fruits = [
     name: "Poires",
     price: 3.49,
     unit: "kg",
-    image: "poires.png"
-  }
-];  
-
+    image: "poires.png",
+  },
+];
 const legumes = [
   {
     ref: "legumes_1",
@@ -81,7 +79,7 @@ const legumes = [
     name: "Oignons",
     price: 0.99,
     unit: "kg",
-    image: "oignons.png"
+    image: "oignons.png",
   },
   {
     ref: "legumes_2",
@@ -89,7 +87,7 @@ const legumes = [
     name: "Poivrons",
     price: 2.99,
     unit: "kg",
-    image: "poivrons.png"
+    image: "poivrons.png",
   },
   {
     ref: "legumes_3",
@@ -97,7 +95,7 @@ const legumes = [
     name: "Radis",
     price: 3.99,
     unit: "kg",
-    image: "radis.png"
+    image: "radis.png",
   },
   {
     ref: "legumes_4",
@@ -105,7 +103,7 @@ const legumes = [
     category: 1,
     price: 3.99,
     unit: "kg",
-    image: "tomato.png"
+    image: "tomato.png",
   },
   {
     ref: "legumes_5",
@@ -113,7 +111,7 @@ const legumes = [
     category: 1,
     price: 3.99,
     unit: "kg",
-    image: "brocoli.png"
+    image: "brocoli.png",
   },
   {
     ref: "legumes_6",
@@ -121,7 +119,7 @@ const legumes = [
     category: 1,
     price: 3.99,
     unit: "kg",
-    image: "aubergine.png"
+    image: "aubergine.png",
   },
   {
     ref: "legumes_7",
@@ -129,7 +127,7 @@ const legumes = [
     category: 1,
     price: 2.99,
     unit: "kg",
-    image: "carot.png"
+    image: "carot.png",
   },
   {
     ref: "legumes_8",
@@ -137,9 +135,9 @@ const legumes = [
     category: 1,
     price: 1.99,
     unit: "kg",
-    image: "chou.png"
-  }
-]; 
+    image: "chou.png",
+  },
+];
 
 const fresh = [
   {
@@ -148,7 +146,7 @@ const fresh = [
     name: "Milk",
     price: 2.99,
     unit: "pièce",
-    image: "milk.png"
+    image: "milk.png",
   },
   {
     ref: "fresh_2",
@@ -156,7 +154,7 @@ const fresh = [
     name: "Beurre à tartiner",
     price: 1.99,
     unit: "pièce",
-    image: "beurre.png"
+    image: "beurre.png",
   },
   {
     ref: "fresh_3",
@@ -164,7 +162,7 @@ const fresh = [
     name: "Oeufs",
     price: 3.99,
     unit: "les douzes",
-    image: "eggs.png"
+    image: "eggs.png",
   },
   {
     ref: "fresh_4",
@@ -172,7 +170,7 @@ const fresh = [
     name: "Yaourts Nature",
     price: 13.99,
     unit: "pièce",
-    image: "yaourts_nature.png"
+    image: "yaourts_nature.png",
   },
   {
     ref: "fresh_5",
@@ -180,9 +178,9 @@ const fresh = [
     name: "Yaourts Fruits",
     price: 10.19,
     unit: "pièce",
-    image: "yaourts_fruits.png"
-  }
-];  
+    image: "yaourts_fruits.png",
+  },
+];
 
 const epicerie = [
   {
@@ -191,7 +189,7 @@ const epicerie = [
     name: "Thon",
     price: 2.99,
     unit: "pièce",
-    image: "thon.png"
+    image: "thon.png",
   },
   {
     ref: "epicerie_2",
@@ -199,7 +197,7 @@ const epicerie = [
     name: "Sardines",
     price: 1.99,
     unit: "pièce",
-    image: "sardines.png"
+    image: "sardines.png",
   },
   {
     ref: "epicerie_3",
@@ -207,7 +205,7 @@ const epicerie = [
     name: "Cookies",
     price: 3.99,
     unit: "pièce",
-    image: "cookies.png"
+    image: "cookies.png",
   },
   {
     ref: "epicerie_4",
@@ -215,7 +213,7 @@ const epicerie = [
     name: "Biscottes",
     price: 5.99,
     unit: "pièce",
-    image: "biscottes.png"
+    image: "biscottes.png",
   },
   {
     ref: "epicerie_5",
@@ -223,7 +221,7 @@ const epicerie = [
     name: "Thé",
     price: 3.59,
     unit: "pièce",
-    image: "thé.png"
+    image: "thé.png",
   },
   {
     ref: "epicerie_6",
@@ -231,7 +229,7 @@ const epicerie = [
     name: "Soupes",
     price: 3.59,
     unit: "pièce",
-    image: "soupe.png"
+    image: "soupe.png",
   },
   {
     ref: "epicerie_7",
@@ -239,8 +237,8 @@ const epicerie = [
     name: "Pâtes",
     price: 3.59,
     unit: "pièce",
-    image: "pates.png"
-  }
+    image: "pates.png",
+  },
 ];
 
 const boissons = [
@@ -250,7 +248,7 @@ const boissons = [
     name: "Vin Rouge",
     price: 12.99,
     unit: "pièce",
-    image: "bordeaux.png"
+    image: "bordeaux.png",
   },
   {
     ref: "boissons_2",
@@ -258,7 +256,7 @@ const boissons = [
     name: "Vin blanc",
     price: 11.99,
     unit: "pièce",
-    image: "white_wine.png"
+    image: "white_wine.png",
   },
   {
     ref: "boissons_3",
@@ -266,7 +264,7 @@ const boissons = [
     name: "Riesling",
     price: 25.99,
     unit: "pièce",
-    image: "riesling.png"
+    image: "riesling.png",
   },
   {
     ref: "boissons_4",
@@ -274,7 +272,7 @@ const boissons = [
     name: "Coca ",
     price: 2.49,
     unit: "pièce",
-    image: "coke.png"
+    image: "coke.png",
   },
   {
     ref: "boissons_5",
@@ -282,7 +280,7 @@ const boissons = [
     name: "Sprite",
     price: 1.49,
     unit: "pièce",
-    image: "sprite.png"
+    image: "sprite.png",
   },
   {
     ref: "boissons_6",
@@ -290,7 +288,7 @@ const boissons = [
     name: "Finley",
     price: 1.49,
     unit: "pièce",
-    image: "finley.png"
+    image: "finley.png",
   },
   {
     ref: "boissons_7",
@@ -298,7 +296,7 @@ const boissons = [
     name: "Nestea",
     price: 1.19,
     unit: "pièce",
-    image: "nestea.png"
+    image: "nestea.png",
   },
   {
     ref: "boissons_8",
@@ -306,7 +304,7 @@ const boissons = [
     name: "Sprite",
     price: 1.49,
     unit: "pièce",
-    image: "sprite.png"
+    image: "sprite.png",
   },
   {
     ref: "boissons_9",
@@ -314,8 +312,8 @@ const boissons = [
     name: "Sprite Zero",
     price: 1.49,
     unit: "pièce",
-    image: "sprite_zero.png"
-  }
+    image: "sprite_zero.png",
+  },
 ];
 
-export const list = [fruits, legumes, fresh, epicerie, boissons]
+export const list = [fruits, legumes, fresh, epicerie, boissons];
