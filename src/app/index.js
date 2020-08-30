@@ -12,6 +12,7 @@ const App = () => {
   const [category, setCategory] = useState(0);
   const [isFiltering, setFiltering] = useState(false);
   const [filtered, setFiltered] = useState(false);
+  const [count, setCount] = useState(1);
   const loadCategory = (i) => {
     setCategory(i);
   };
@@ -22,19 +23,28 @@ const App = () => {
       const term = input.toLowerCase();
       return name.indexOf(term) > -1;
     });
-    setFiltered(results)
+    setFiltered(results);
   };
   useEffect(() => {});
 
   return (
     <div className="app">
-      <Navbar filter={filterResults} setFiltering={setFiltering} />
+      <Navbar
+        filter={filterResults}
+        setFiltering={setFiltering}
+        count={count}
+      />
       <div className="container">
         <div className="row">
           <SideMenu loadCategory={loadCategory} category={category} />
           <div className="col-sm">
             <div className="row">
-              <List data={isFiltering ? filtered : list[category]} category={category} />
+              <List
+                data={isFiltering ? filtered : list[category]}
+                category={category}
+                addToCart={setCount}
+                count={count}
+              />
             </div>
           </div>
         </div>

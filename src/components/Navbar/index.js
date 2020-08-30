@@ -1,6 +1,6 @@
 import React from "react";
 
-const Navbar = ({ filter, setFiltering }) => {
+const Navbar = ({ filter, setFiltering, count }) => {
   return (
     <nav className="navbar orange navbar-expand-lg navbar-light bg-light fixed-top">
       <a href="/" className="navbar-brand crimson">
@@ -35,7 +35,8 @@ const Navbar = ({ filter, setFiltering }) => {
             </form>
           </div>
           <div className="menu-right">
-            <i className="fas fa-shopping-bag"></i>
+            <i className="fas fa-shopping-bag fa-2x"></i>
+            <span className="badge badge-pill badge-success">{count}</span>
           </div>
         </div>
       </div>

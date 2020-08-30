@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-export const Modal = ({ item }) => {
-  const [count, setCount] = useState(1);
+export const Modal = ({ item, addToCart, count }) => {
+  const [qty, setQty] = useState(1);
   return (
     <div
       className="modal fade "
@@ -56,15 +56,15 @@ export const Modal = ({ item }) => {
                   aria-label="Basic example"
                 >
                   <button
-                    onClick={() => setCount(count > 1 ? count - 1 : 1)}
+                    onClick={() => setQty(qty > 1 ? qty - 1 : 1)}
                     type="button"
                     className="btn btn-secondary"
                   >
                     -
                   </button>
-                  <span className="btn btn-light qty">{count}</span>
+                  <span className="btn btn-light qty">{qty}</span>
                   <button
-                    onClick={() => setCount(count + 1)}
+                    onClick={() => setQty(qty + 1)}
                     type="button"
                     className="btn btn-secondary"
                   >
@@ -88,6 +88,7 @@ export const Modal = ({ item }) => {
               type="button"
               className="btn btn-success"
               data-dismiss="modal"
+              onClick={() => addToCart(count + 1)}
             >
               Add to Cart
             </button>
