@@ -1,6 +1,6 @@
 import React from "react";
 
-const Navbar = () => {
+const Navbar = ({ filter, setFiltering }) => {
   return (
     <nav className="navbar orange navbar-expand-lg navbar-light bg-light fixed-top">
       <a href="/" className="navbar-brand crimson">
@@ -25,8 +25,12 @@ const Navbar = () => {
               <input
                 className="form-control mr-sm-2"
                 type="search"
-                placeholder="Search"
+                placeholder="Rechercher"
                 aria-label="Search"
+                onChange={(e) => {
+                  setFiltering(e.target.value.length);
+                  filter(e.target.value);
+                }}
               />
             </form>
           </div>
