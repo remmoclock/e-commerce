@@ -1,18 +1,19 @@
 import React from "react";
-import Card from '../Card';
+import Card from "../Card";
 
-const List = props => {
-    const { data } = props
-    const fruits = data[0]
+const List = (props) => {
+  const { data, category } = props;
+  const grocery = data[category];
 
-    return (
-        <div className="col-sm">
-        <div className="row">
-          {fruits.map(fruit => <Card key={fruit.ref} fruit={fruit} />)}
-        </div>
+  return (
+    <div className="col-sm">
+      <div className="row">
+        {grocery.map((fruit) => (
+          <Card key={fruit.ref} fruit={fruit} />
+        ))}
       </div>
-    );
-  };
+    </div>
+  );
+};
 
-  export default List;
-  
+export default List;
