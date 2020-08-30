@@ -34,7 +34,9 @@ const Navbar = ({ filter, setFiltering }) => {
               />
             </form>
           </div>
-          <div className="menu-right">{/* cart */}</div>
+          <div className="menu-right">
+            <i className="fas fa-shopping-bag"></i>
+          </div>
         </div>
       </div>
     </nav>

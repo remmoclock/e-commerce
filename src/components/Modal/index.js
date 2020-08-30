@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 export const Modal = ({ item }) => {
+  const [count, setCount] = useState(1);
   return (
     <div
       className="modal fade "
@@ -47,18 +48,26 @@ export const Modal = ({ item }) => {
                 </p>
                 <h3 className="price">
                   {item.price}/{item.unit}
-                </h3>{" "}
+                </h3>
                 <br />
                 <div
                   className="btn-group"
                   role="group"
                   aria-label="Basic example"
                 >
-                  <button type="button" className="btn btn-secondary">
+                  <button
+                    onClick={() => setCount(count > 1 ? count - 1 : 1)}
+                    type="button"
+                    className="btn btn-secondary"
+                  >
                     -
                   </button>
-                  <span className="btn btn-light qty">1</span>
-                  <button type="button" className="btn btn-secondary">
+                  <span className="btn btn-light qty">{count}</span>
+                  <button
+                    onClick={() => setCount(count + 1)}
+                    type="button"
+                    className="btn btn-secondary"
+                  >
                     +
                   </button>
                 </div>
