@@ -1,4 +1,5 @@
 import React from "react";
+import { Modal } from "../Modal";
 
 const Card = (props) => {
   const { item } = props;
@@ -22,12 +23,18 @@ const Card = (props) => {
               <p>
                 {item.price}€ /{item.unit}
               </p>
-              <button className="btn btn-warning btn-sm">Voir produit</button>
+              <button
+                className="btn btn-warning btn-sm"
+                data-toggle="modal"
+                data-target={`#${item.ref}`}
+              >
+                Voir produit
+              </button>
             </div>
           </div>
         </div>
       </div>
-      {/* modal */}
+      <Modal item={item} />
     </div>
   );
 };
