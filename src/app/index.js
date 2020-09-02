@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./styles/app.css";
 
 // import components
-import Cart from "../components/Cart";
+import CartPage from "../components/CartPage";
 import Home  from "../components/Home";
 import Navbar from "../components/Navbar";
 
@@ -52,7 +52,7 @@ const App = () => {
             />
           )}
         />
-        <Route path="/cart" component={Cart} />
+        <Route path="/cart" component={CartPage} />
       </Router>
     </div>
   );
