@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./styles/app.css";
 
 // import components
-import Navbar from "../components/Navbar/index.js";
-import SideMenu from "../components/SideMenu";
-import List from "../components/List";
+import Cart from "../components/Cart";
+import Home  from "../components/Home";
+import Navbar from "../components/Navbar";
 
 import { list } from "./data";
 
@@ -12,7 +13,7 @@ const App = () => {
   const [category, setCategory] = useState(0);
   const [isFiltering, setFiltering] = useState(false);
   const [filtered, setFiltered] = useState(false);
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(0);
   const loadCategory = (i) => {
     setCategory(i);
   };
@@ -29,26 +30,30 @@ const App = () => {
 
   return (
     <div className="app">
-      <Navbar
-        filter={filterResults}
-        setFiltering={setFiltering}
-        count={count}
-      />
-      <div className="container">
-        <div className="row">
-          <SideMenu loadCategory={loadCategory} category={category} />
-          <div className="col-sm">
-            <div className="row">
-              <List
-                data={isFiltering ? filtered : list[category]}
-                category={category}
-                addToCart={setCount}
-                count={count}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+      <Router>
+        <Navbar
+          filter={filterResults}
+          setFiltering={setFiltering}
+          count={count}
+        />
+        {/* Routes */}
+        <Route
+          exact
+          path="/"
+          component={() => (
+            <Home
+              category={category}
+              loadCategory={loadCategory}
+              addToCart={setCount}
+              list={list}
+              isFiltering={isFiltering}
+              filtered={filtered}
+              count={count}
+            />
+          )}
+        />
+        <Route path="/cart" component={Cart} />
+      </Router>
     </div>
   );
 };

@@ -1,11 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ filter, setFiltering, count }) => {
   return (
     <nav className="navbar orange navbar-expand-lg navbar-light bg-light fixed-top">
-      <a href="/" className="navbar-brand crimson">
-        <i className="fas fa-shopping-cart"></i> Mes Courses en Ligne
-      </a>
+      <Link className="navbar-brand crimson" to="/">
+        Mes Courses en Ligne
+        <i className="fas fa-shopping-cart grey"></i>
+      </Link>
+
       <button
         className="navbar-toggler"
         type="button"
@@ -35,8 +38,10 @@ const Navbar = ({ filter, setFiltering, count }) => {
             </form>
           </div>
           <div className="menu-right">
-            <i className="fas fa-shopping-bag fa-2x"></i>
-            <span className="badge badge-pill badge-success">{count}</span>
+            <Link to="/cart">
+              <i className="fas fa-shopping-bag fa-2x grey"></i>
+              <span className="badge badge-pill badge-success">{count}</span>
+            </Link>
           </div>
         </div>
       </div>
