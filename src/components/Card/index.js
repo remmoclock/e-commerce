@@ -2,7 +2,7 @@ import React from "react";
 import { Modal } from "../Modal";
 
 const Card = (props) => {
-  const { item, addToCart, count } = props;
+  const { item, count } = props;
   return (
     <div className="col-sm-4">
       <div className="card">
@@ -34,7 +34,7 @@ const Card = (props) => {
           </div>
         </div>
       </div>
-      <Modal item={item} addToCart={addToCart} count={count} />
+      <Modal item={item} count={count} />
     </div>
   );
 };

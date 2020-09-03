@@ -1,7 +1,13 @@
 import React, { useState } from "react";
+import { addToCart } from "../../app/redux/actions";
+import { useDispatch } from "react-redux";
 
-export const Modal = ({ item, addToCart, count }) => {
+export const Modal = ({ item }) => {
   const [qty, setQty] = useState(1);
+  const dispatch = useDispatch();
+  const add = (item, quantity) => {
+    dispatch(addToCart(item, quantity));
+  };
   return (
     <div
       className="modal fade "
@@ -88,7 +94,7 @@ export const Modal = ({ item, addToCart, count }) => {
               type="button"
               className="btn btn-success"
               data-dismiss="modal"
-              onClick={() => addToCart(count + 1)}
+              onClick={() => add(item, qty)}
             >
               Add to Cart
             </button>

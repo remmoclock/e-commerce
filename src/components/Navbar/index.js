@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
-const Navbar = ({ filter, setFiltering, count }) => {
+const Navbar = ({ filter, setFiltering }) => {
+  const items = useSelector((state) => state.items);
   return (
     <nav className="navbar orange navbar-expand-lg navbar-light bg-light fixed-top">
       <Link className="navbar-brand crimson" to="/">
@@ -40,7 +42,9 @@ const Navbar = ({ filter, setFiltering, count }) => {
           <div className="menu-right">
             <Link to="/cart">
               <i className="fas fa-shopping-bag fa-2x grey"></i>
-              <span className="badge badge-pill badge-success">{count}</span>
+              <span className="badge badge-pill badge-success">
+                {items.length > 0 && items.length}
+              </span>
             </Link>
           </div>
         </div>

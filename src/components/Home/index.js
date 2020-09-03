@@ -2,8 +2,15 @@ import React from "react";
 import SideMenu from "../SideMenu";
 import List from "../List";
 
-const Home = props => {
-    const {isFiltering, filtered, list, category, addToCart, count, loadCategory } = props
+const Home = (props) => {
+  const {
+    isFiltering,
+    filtered,
+    list,
+    category,
+    loadCategory,
+    updateCart,
+  } = props;
   return (
     <div>
       <div className="container">
@@ -14,8 +21,7 @@ const Home = props => {
               <List
                 data={isFiltering ? filtered : list[category]}
                 category={category}
-                addToCart={addToCart}
-                count={count}
+                updateCart={updateCart}
               />
             </div>
           </div>

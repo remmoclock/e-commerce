@@ -161,7 +161,7 @@ const fresh = [
     category: 2,
     name: "Oeufs",
     price: 3.99,
-    unit: "les douzes",
+    unit: "pièce",
     image: "eggs.png",
   },
   {

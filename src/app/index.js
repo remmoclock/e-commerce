@@ -4,12 +4,13 @@ import "./styles/app.css";
 
 // import components
 import CartPage from "../components/CartPage";
-import Home  from "../components/Home";
+import Home from "../components/Home";
 import Navbar from "../components/Navbar";
 
 import { list } from "./data";
 
-const App = () => {
+const App = (props) => {
+  const { items, onUpdateCart } = props;
   const [category, setCategory] = useState(0);
   const [isFiltering, setFiltering] = useState(false);
   const [filtered, setFiltered] = useState(false);
@@ -28,6 +29,8 @@ const App = () => {
   };
   useEffect(() => {});
 
+  const update = () => {};
+
   return (
     <div className="app">
       <Router>
@@ -44,11 +47,10 @@ const App = () => {
             <Home
               category={category}
               loadCategory={loadCategory}
-              addToCart={setCount}
+              updateCart={update}
               list={list}
               isFiltering={isFiltering}
               filtered={filtered}
-              count={count}
             />
           )}
         />

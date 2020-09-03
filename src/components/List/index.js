@@ -2,7 +2,7 @@ import React from "react";
 import Card from "../Card";
 
 const List = (props) => {
-  const { data, addToCart, count } = props;
+  const { data, addToCart, updateCart } = props;
 
   return (
     <div className="col-sm">
@@ -12,7 +12,7 @@ const List = (props) => {
             key={item.ref}
             item={item}
             addToCart={addToCart}
-            count={count}
+            updateCart={updateCart}
           />
         ))}
       </div>
