@@ -23,10 +23,12 @@ export default function onlineStoreApp(state = initalState, action) {
     case actions.REMOVE_FROM_CART:
       return Object.assign({}, state, {
           items : state.items.filter(item => {
-              return item.id !== action.payload.id
+              return item.id !== action.payload
           })
       });
       default: 
       return state
   }
 }
+
+

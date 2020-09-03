@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { addToCart } from "../../app/redux/actions";
+import { addtoCart } from "../../app/redux/actions";
 import { useDispatch } from "react-redux";
 
 export const Modal = ({ item }) => {
   const [qty, setQty] = useState(1);
   const dispatch = useDispatch();
   const add = (item, quantity) => {
-    dispatch(addToCart(item, quantity));
+    dispatch(addtoCart(item, quantity));
   };
   return (
     <div
