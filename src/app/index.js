@@ -10,7 +10,7 @@ import Navbar from "../components/Navbar";
 import { list } from "./data";
 
 const App = (props) => {
-  const { items, onUpdateCart } = props;
+  const { items, saveLocalStorage } = props;
   const [category, setCategory] = useState(0);
   const [isFiltering, setFiltering] = useState(false);
   const [filtered, setFiltered] = useState(false);
@@ -27,9 +27,9 @@ const App = (props) => {
     });
     setFiltered(results);
   };
-  useEffect(() => {});
-
-  const update = () => {};
+  useEffect(() => {
+    saveLocalStorage(items);
+  }, [items]);
 
   return (
     <div className="app">
@@ -47,7 +47,6 @@ const App = (props) => {
             <Home
               category={category}
               loadCategory={loadCategory}
-              updateCart={update}
               list={list}
               isFiltering={isFiltering}
               filtered={filtered}

@@ -2,10 +2,7 @@ import React, { useEffect } from "react";
 import Row from "../Row";
 import { useSelector, useDispatch } from "react-redux";
 
-const Table = () => {
-  const items = useSelector((state) => state.items);
-  useEffect(() => {
-  });
+const Table = ({ items }) => {
   return (
     <table>
       <thead>

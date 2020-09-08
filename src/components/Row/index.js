@@ -8,12 +8,21 @@ const Row = (props) => {
   const item = details;
   const [qty, setQty] = useState(quantity);
   const dispatch = useDispatch();
-  const update = (item, quantity) => {
-    dispatch(updateCart(item, quantity));
+  const update = (action) => {
+    if (action === "increment") {
+      setQty(qty + 1);
+    }
+    if (action === "decrement") {
+      setQty(qty - 1);
+    }
   };
-  const remove = id => {
+  const remove = (id) => {
     dispatch(removeFromCart(id));
   };
+  useEffect(() => {
+    dispatch(updateCart(id, qty));
+  }, [qty, id]);
+
   return (
     <tr>
       <td>
@@ -35,8 +44,7 @@ const Row = (props) => {
             className="btn btn-secondary"
             onClick={() => {
               if (qty > 1) {
-                setQty(qty - 1);
-                update(item, qty);
+                update("decrement");
               }
             }}
           >
@@ -47,15 +55,14 @@ const Row = (props) => {
             type="button"
             className="btn btn-secondary"
             onClick={() => {
-              setQty(qty + 1);
-              update(item, qty);
+              update("increment");
             }}
           >
             +
           </button>
         </div>
       </td>
-      <td>€{quantity * item.price}toFixed(2) </td>
+      <td>€{(quantity * item.price).toFixed(2)} </td>
       <td>
         <button
           type="button"

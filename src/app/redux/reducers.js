@@ -1,19 +1,25 @@
 import { actions } from "./actions";
 
+const saveToLocalStorage = (object) => {
+  localStorage.setItem("items", JSON.stringify(object));
+};
 const initalState = {
-  items: [],
+  items:
+    JSON.parse(localStorage.getItem("items")) !== null
+      ? JSON.parse(localStorage.getItem("items"))
+      : [],
 };
 
 export default function onlineStoreApp(state = initalState, action) {
   switch (action.type) {
     case actions.ADD_TO_CART:
       return Object.assign({}, state, {
-        items: [...state.items, actions.payload],
+        items: [...state.items, action.payload],
       });
     case actions.UPDATE_CART:
       return Object.assign({}, state, {
         items: state.items.map((item) => {
-          return item.id === action.payload.item.id
+          return item.id === action.payload.id
             ? Object.assign({}, item, {
                 quantity: action.payload.quantity,
               })
@@ -22,13 +28,14 @@ export default function onlineStoreApp(state = initalState, action) {
       });
     case actions.REMOVE_FROM_CART:
       return Object.assign({}, state, {
-          items : state.items.filter(item => {
-              return item.id !== action.payload
-          })
+        items: state.items.filter((item) => {
+          return item.id !== action.payload;
+        }),
       });
-      default: 
-      return state
+    case actions.SAVE_CART:
+      saveToLocalStorage(action.payload.items);
+      return state;
+    default:
+      return state;
   }
 }
-
-
