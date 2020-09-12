@@ -88,7 +88,7 @@ export const Checkout = () => {
 
           <a
             href="/"
-            className={`white btn btn-light btn-lg btn-block checkout  ${!isValid && "disabled"} bg-crimson `}
+            className={`white btn btn-light btn-lg btn-block checkout  ${ !isValid && "disabled"} bg-crimson `}
           >
               
             Valider

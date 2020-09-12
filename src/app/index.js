@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react"
 import { BrowserRouter as Router, Route } from "react-router-dom"
 import "./styles/app.css"
+import { list } from "./data"
+import UserProfileContextProvider from "../app/context/UserProfileContext"
 
 // import components
 import CartPage from "../components/CartPage"
 import Home from "../components/Home"
 import Navbar from "../components/Navbar"
-
-import { list } from "./data"
 import { Checkout } from "../components/Checkout"
 
 const App = (props) => {
@@ -35,27 +35,29 @@ const App = (props) => {
   return (
     <div className="app">
       <Router>
-        <Navbar
-          filter={filterResults}
-          setFiltering={setFiltering}
-          count={count}
-        />
-        {/* Routes */}
-        <Route
-          exact
-          path="/"
-          component={() => (
-            <Home
-              category={category}
-              loadCategory={loadCategory}
-              list={list}
-              isFiltering={isFiltering}
-              filtered={filtered}
-            />
-          )}
-        />
-        <Route path="/cart" component={CartPage} />
-        <Route path="/checkout" component={Checkout} />
+        <UserProfileContextProvider>
+          <Navbar
+            filter={filterResults}
+            setFiltering={setFiltering}
+            count={count}
+          />
+          {/* Routes */}
+          <Route
+            exact
+            path="/"
+            component={() => (
+              <Home
+                category={category}
+                loadCategory={loadCategory}
+                list={list}
+                isFiltering={isFiltering}
+                filtered={filtered}
+              />
+            )}
+          />
+          <Route path="/cart" component={CartPage} />
+          <Route path="/checkout" component={Checkout} />
+        </UserProfileContextProvider>
       </Router>
     </div>
   )
