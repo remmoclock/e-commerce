@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Row from "../Row";
-import { useSelector, useDispatch } from "react-redux";
 
 const Table = ({ items }) => {
   return (

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { updateCart } from "../../app/redux/actions";
 import { removeFromCart } from "../../app/redux/actions";
 
@@ -20,7 +20,7 @@ const Row = (props) => {
     dispatch(removeFromCart(id));
   };
   useEffect(() => {
-    dispatch(updateCart(id, qty));
+    (updateCart(id, qty));
   }, [qty, id]);
 
   return (

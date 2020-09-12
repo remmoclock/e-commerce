@@ -1,24 +1,21 @@
-import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
-import Table from "../Table";
+import React, { useState, useEffect } from "react"
+import { useSelector } from "react-redux"
+import { Link } from "react-router-dom"
+import Table from "../Table"
 
 const CartPage = () => {
-  const items = useSelector((state) => state.items);
-  const [subTotal, setSubTotal] = useState(0.0);
-  const [total, setTotal] = useState(0.0);
-  const shipping = 10.0;
+  const items = useSelector((state) => state.items)
+  const [subTotal, setSubTotal] = useState(0.0)
+  const [total, setTotal] = useState(0.0)
+  const shipping = 10.0
 
   useEffect(() => {
-    let totals = items.map(
-      (item) => {
-        return item.quantity * item.details.price;
-      },
-      [items, subTotal, total]
-    );
-
-    setSubTotal(totals.reduce((item1, item2) => item1 + item2, 0));
-    setTotal(subTotal + shipping);
-  });
+    let totals = items.map((item) => {
+      return item.quantity * item.details.price
+    })
+    setSubTotal(totals.reduce((item1, item2) => item1 + item2, 0))
+    setTotal(subTotal + shipping)
+  }, [items, subTotal, total])
 
   return (
     <>
@@ -56,20 +53,19 @@ const CartPage = () => {
                 </ul>
               </li>
             </ul>
-            <button
-              type="button"
-              className="btn btn-light btn-lg btn-block checkout bg-crimson"
-              disabled={true}
+            <Link
+              to="/checkout"
+              className={`white btn btn-light btn-lg btn-block checkout ${
+                !items.length && "disabled"
+              } bg-crimson`}
             >
-              <a href="/" className="white">
-                Checkout
-              </a>
-            </button>
+              Confirmer Panier
+            </Link>
           </div>
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default CartPage;
+export default CartPage
