@@ -67,7 +67,7 @@ const Row = (props) => {
         <button
           type="button"
           className="btn btn-danger remove"
-          onClick={() => remove(item)}
+          onClick={() => remove(id)}
         >
           X
         </button>
