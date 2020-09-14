@@ -9,7 +9,7 @@ const SideMenu = ({ loadCategory, category }) => {
         {links.map((link, index) => {
           return (
             <li
-              // className={category === index && "active"}
+              className={category === index ? "active" : null}
               key={index}
               onClick={() => loadCategory(index)}
             >

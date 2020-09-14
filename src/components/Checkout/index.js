@@ -1,12 +1,24 @@
-import React, { Fragment, useState, useEffect } from "react"
+import React, { Fragment, useState, useEffect, useContext } from "react"
+import { Link } from "react-router-dom"
+import { UserProfileContext } from "../../app/context/UserProfileContext"
 import "../../app/styles/app.css"
 
 export const Checkout = () => {
   const [isValid, setValid] = useState(false)
+  const value = useContext(UserProfileContext)
+  const {
+    firstName,
+    lastName,
+    email,
+    address,
+    zipCode,
+    city,
+    setUserProfileContext,
+  } = value
 
   const validate = () => {
     let errors = []
-    const inputs = document.querySelectorAll(".from-control")
+    const inputs = document.querySelectorAll(".form-control")
     inputs.forEach((input) => {
       !input.value ? errors.push(input) : errors.length && errors.pop()
     })
@@ -20,7 +32,7 @@ export const Checkout = () => {
   return (
     <Fragment>
       <div className="col-sm-6 offset-3">
-        <h2>Checkout</h2>
+        <h2>Coordonnées</h2>
         <br />
         <form>
           <div className="row">
@@ -30,7 +42,11 @@ export const Checkout = () => {
                 className="form-control"
                 placeholder="Prénom"
                 property=""
-                defaultValue=""
+                defaultValue={firstName}
+                name="firstName"
+                onChange={(e) =>
+                  setUserProfileContext({ [e.target.name]: e.target.value })
+                }
               />
             </div>
             <div className="col">
@@ -39,7 +55,11 @@ export const Checkout = () => {
                 className="form-control"
                 placeholder="Nom"
                 property=""
-                defaultValue=""
+                defaultValue={lastName}
+                name="lastName"
+                onChange={(e) =>
+                  setUserProfileContext({ [e.target.name]: e.target.value })
+                }
               />
             </div>
           </div>
@@ -51,7 +71,11 @@ export const Checkout = () => {
               id="exampleInputEmail1"
               placeholder="Email"
               property=""
-              defaultValue=""
+              defaultValue={email}
+              name="email"
+              onChange={(e) =>
+                setUserProfileContext({ [e.target.name]: e.target.value })
+              }
             />
           </div>
           <div className="form-group">
@@ -61,7 +85,11 @@ export const Checkout = () => {
               id="exampleInputEmail1"
               placeholder="Adresse"
               property=""
-              defaultValue=""
+              defaultValue={address}
+              name="address"
+              onChange={(e) =>
+                setUserProfileContext({ [e.target.name]: e.target.value })
+              }
             />
           </div>
           <div className="row">
@@ -71,7 +99,11 @@ export const Checkout = () => {
                 className="form-control"
                 placeholder="Code Postal"
                 property=""
-                defaultValue=""
+                defaultValue={zipCode}
+                name="zipCode"
+                onChange={(e) =>
+                  setUserProfileContext({ [e.target.name]: e.target.value })
+                }
               />
             </div>
             <div className="col">
@@ -80,19 +112,24 @@ export const Checkout = () => {
                 className="form-control"
                 placeholder="Ville"
                 property=""
-                defaultValue=""
+                defaultValue={city}
+                name="city"
+                onChange={(e) =>
+                  setUserProfileContext({ [e.target.name]: e.target.value })
+                }
               />
             </div>
           </div>
           <br />
 
-          <a
-            href="/"
-            className={`white btn btn-light btn-lg btn-block checkout  ${ !isValid && "disabled"} bg-crimson `}
+          <Link
+            to="/confirm"
+            className={`white btn btn-light btn-lg btn-block checkout  ${
+              !isValid && "disabled"
+            } bg-crimson `}
           >
-              
             Valider
-          </a>
+          </Link>
         </form>
       </div>
     </Fragment>

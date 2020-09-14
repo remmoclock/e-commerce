@@ -9,6 +9,7 @@ import CartPage from "../components/CartPage"
 import Home from "../components/Home"
 import Navbar from "../components/Navbar"
 import { Checkout } from "../components/Checkout"
+import { Confirm } from "../components/Confirm"
 
 const App = (props) => {
   const { items, saveLocalStorage } = props
@@ -57,6 +58,7 @@ const App = (props) => {
           />
           <Route path="/cart" component={CartPage} />
           <Route path="/checkout" component={Checkout} />
+          <Route path="/confirm" component={Confirm} />
         </UserProfileContextProvider>
       </Router>
     </div>
