@@ -15,7 +15,7 @@ const App = (props) => {
   const [category, setCategory] = useState(0)
   const [isFiltering, setFiltering] = useState(false)
   const [filtered, setFiltered] = useState(false)
-  const [count, setCount] = useState(0)
+  const [count] = useState(0)
   const loadCategory = (i) => {
     setCategory(i)
   }
@@ -29,8 +29,8 @@ const App = (props) => {
     setFiltered(results)
   }
   useEffect(() => {
-    saveLocalStorage(items)
-  }, [items])
+    saveLocalStorage(items, saveLocalStorage)
+  }, [items, saveLocalStorage])
 
   return (
     <div className="app">

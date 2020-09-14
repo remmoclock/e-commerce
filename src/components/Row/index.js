@@ -1,27 +1,26 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { updateCart } from "../../app/redux/actions";
-import { removeFromCart } from "../../app/redux/actions";
+import React, { useEffect, useState } from "react"
+import { useDispatch } from "react-redux"
+import { updateCart, removeFromCart  } from "../../app/redux/actions"
 
 const Row = (props) => {
-  const { id, quantity, details } = props.item;
-  const item = details;
-  const [qty, setQty] = useState(quantity);
-  const dispatch = useDispatch();
+  const { id, quantity, details } = props.item
+  const item = details
+  const [qty, setQty] = useState(quantity)
+  const dispatch = useDispatch()
   const update = (action) => {
     if (action === "increment") {
-      setQty(qty + 1);
+      setQty(qty + 1)
     }
     if (action === "decrement") {
-      setQty(qty - 1);
+      setQty(qty - 1)
     }
-  };
+  }
   const remove = (id) => {
-    dispatch(removeFromCart(id));
-  };
+    dispatch(removeFromCart(id))
+  }
   useEffect(() => {
-    (updateCart(id, qty));
-  }, [qty, id]);
+    dispatch(updateCart(id, qty, dispatch))
+  }, [qty, id, dispatch])
 
   return (
     <tr>
@@ -44,7 +43,7 @@ const Row = (props) => {
             className="btn btn-secondary"
             onClick={() => {
               if (qty > 1) {
-                update("decrement");
+                update("decrement")
               }
             }}
           >
@@ -55,7 +54,7 @@ const Row = (props) => {
             type="button"
             className="btn btn-secondary"
             onClick={() => {
-              update("increment");
+              update("increment")
             }}
           >
             +
@@ -73,7 +72,7 @@ const Row = (props) => {
         </button>
       </td>
     </tr>
-  );
-};
+  )
+}
 
-export default Row;
+export default Row

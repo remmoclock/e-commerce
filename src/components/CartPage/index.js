@@ -26,20 +26,20 @@ const CartPage = () => {
           </div>
           <div className="col-sm-3 order-summary">
             <ul className="list-group">
-              <li className="list-group-item">Order Summary</li>
+              <li className="list-group-item">Commande</li>
 
               <li className="list-group-item">
                 <ul className="list-group flex">
-                  <li className="text-left">Subtotal</li>
+                  <li className="text-left">Sous-total</li>
                   <li className="text-right">€{subTotal.toFixed(2)}</li>
                 </ul>
                 <ul className="list-group flex">
-                  <li className="text-left">Shipping</li>
+                  <li className="text-left">Livraison</li>
                   <li className="text-right">€{shipping.toFixed(2)}</li>
                 </ul>
                 <ul className="list-group flex">
                   <li className="coupon crimson">
-                    <small> >> Add Coupon Code</small>
+                    <small> >> Ajouter coupon</small>
                   </li>
                 </ul>
               </li>
