@@ -1,7 +1,6 @@
 import React, { Fragment, useState, useEffect, useContext } from "react"
 import { Link } from "react-router-dom"
 import { UserProfileContext } from "../../app/context/UserProfileContext"
-import "../../app/styles/app.css"
 
 export const Checkout = () => {
   const [isValid, setValid] = useState(false)

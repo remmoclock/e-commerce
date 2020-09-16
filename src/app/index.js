@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { BrowserRouter as Router, Route } from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import "./styles/app.css"
 import { list } from "./data"
 import UserProfileContextProvider from "../app/context/UserProfileContext"
@@ -10,6 +10,7 @@ import Home from "../components/Home"
 import Navbar from "../components/Navbar"
 import { Checkout } from "../components/Checkout"
 import { Confirm } from "../components/Confirm"
+import Error from "../components/404"
 
 const App = (props) => {
   const { items, saveLocalStorage } = props
@@ -43,22 +44,25 @@ const App = (props) => {
             count={count}
           />
           {/* Routes */}
-          <Route
-            exact
-            path="/"
-            component={() => (
-              <Home
-                category={category}
-                loadCategory={loadCategory}
-                list={list}
-                isFiltering={isFiltering}
-                filtered={filtered}
-              />
-            )}
-          />
-          <Route path="/cart" component={CartPage} />
-          <Route path="/checkout" component={Checkout} />
-          <Route path="/confirm" component={Confirm} />
+          <Switch>
+            <Route
+              exact
+              path="/"
+              component={() => (
+                <Home
+                  category={category}
+                  loadCategory={loadCategory}
+                  list={list}
+                  isFiltering={isFiltering}
+                  filtered={filtered}
+                />
+              )}
+            />
+            <Route exact path="/cart" component={CartPage} />
+            <Route exact path="/checkout" component={Checkout} />
+            <Route exact path="/confirm" component={Confirm} />
+            <Route component={Error} />
+          </Switch>
         </UserProfileContextProvider>
       </Router>
     </div>
