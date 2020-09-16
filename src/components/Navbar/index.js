@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import React from "react"
+import { Link } from "react-router-dom"
+import { useSelector } from "react-redux"
 
 const Navbar = ({ filter, setFiltering }) => {
-  const items = useSelector((state) => state.items);
+  const items = useSelector((state) => state.items)
   return (
     <nav className="navbar orange navbar-expand-lg navbar-light bg-light fixed-top">
       <Link className="navbar-brand crimson" to="/">
@@ -33,8 +33,8 @@ const Navbar = ({ filter, setFiltering }) => {
                 placeholder="Rechercher"
                 aria-label="Search"
                 onChange={(e) => {
-                  setFiltering(e.target.value.length);
-                  filter(e.target.value);
+                  setFiltering(e.target.value.length)
+                  filter(e.target.value)
                 }}
               />
             </form>
@@ -50,7 +50,7 @@ const Navbar = ({ filter, setFiltering }) => {
         </div>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

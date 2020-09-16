@@ -34,7 +34,7 @@ const Row = (props) => {
           alt={item.name}
         />
       </td>
-      <td>{item.ref}</td>
+      <td>{item.name}</td>
       <td>€{item.price}</td>
       <td>
         <div className="btn-group" role="group" aria-label="Basic example">

@@ -88,7 +88,7 @@ export const Modal = ({ item }) => {
               className="btn btn-secondary"
               data-dismiss="modal"
             >
-              Close
+              Fermer
             </button>
             <button
               type="button"
@@ -96,7 +96,7 @@ export const Modal = ({ item }) => {
               data-dismiss="modal"
               onClick={() => add(item, qty)}
             >
-              Add to Cart
+              Ajouter au panier
             </button>
           </div>
         </div>
